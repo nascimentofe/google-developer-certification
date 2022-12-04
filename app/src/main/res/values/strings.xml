@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">GoogleDeveloperCertification</string>
+    <string name="app_name">Google Developer Certification</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_toast_snake">Toast and Snake</string>
+    <string name="btn_notification">Notification</string>
+    <string name="btn_work_manager">Work Manager (Background)</string>
+    <string name="btn_material_components">Material Components</string>
+    <string name="btn_interactive_ui">Interactive UI</string>
+    <string name="btn_activities_intent">Activities Intent</string>
+    <string name="btn_recycler_view">Recycler View</string>
+    <string name="btn_user_navigation_tab">Navigation Tab</string>
+    <string name="btn_user_navigation_drawer">Navigation Drawer</string>
+    <string name="btn_menu_pickers">Menu Pickers</string>
+    <string name="btn_themes_touches">Themes Touches</string>
+    <string name="btn_themes_touches_baterry">Themes Touches Baterry</string>
+    <string name="btn_room_with_view">Room with View</string>
+    <string name="btn_livedata_viewmodel">Livedata Viewmodel</string>
+    <string name="btn_repository">Repository</string>
+    <string name="btn_shared_preferences">Shared Preferences</string>
+    <string name="btn_anim_pulse_explode">Anim Pulse Explode</string>
+    <string name="btn_user_navigation">User Navigation Activity</string>
 </resources>

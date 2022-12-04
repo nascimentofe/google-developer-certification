@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       tools:context=".presentation.ui.toast_snake.ToastSnakeFragment"
+       android:id="@+id/coordinate_root"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="20dp">
+
+       <ImageView
+           android:id="@+id/toast"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:background="?attr/selectableItemBackground"
+           android:src="@drawable/ic_message"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintVertical_bias="0.12"
+           />
+
+       <ImageView
+           android:id="@+id/snake"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:background="?attr/selectableItemBackground"
+           android:src="@drawable/ic_warning"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/toast"
+           app:layout_constraintVertical_bias="0.10"
+           />
+
+       <ImageView
+           android:id="@+id/snake_action"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:background="?attr/selectableItemBackground"
+           android:src="@drawable/ic_favorite"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/toast"
+           app:layout_constraintVertical_bias="0.32"
+           />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

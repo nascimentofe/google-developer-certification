@@ -1,4 +1,9 @@
 package com.nascimentofe.googledevelopercertification.presentation.ui.main
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel : ViewModel() {
+
+
+
 }

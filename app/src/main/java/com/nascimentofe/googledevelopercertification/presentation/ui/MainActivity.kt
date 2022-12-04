@@ -1,4 +1,4 @@
-package com.nascimentofe.googledevelopercertification.presentation.ui.activity
+package com.nascimentofe.googledevelopercertification.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import com.nascimentofe.googledevelopercertification.R
