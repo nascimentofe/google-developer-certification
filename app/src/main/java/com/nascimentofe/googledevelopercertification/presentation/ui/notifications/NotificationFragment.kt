@@ -42,6 +42,10 @@ class NotificationFragment : Fragment() {
         notificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         setupButtonListener()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createLatestNotification()
+        }
+        registerNotificationReceiver()
         setupStateButton(enableNotify = true, enableUpdate = false, enableCancel = false)
 
         return binding.root
