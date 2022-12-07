@@ -34,5 +34,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private fun setupComponents() {
         binding.btnToastSnakeFragment.setOnClickListener { navTo(R.id.main_to_toast_snake_fragment) }
         binding.btnNotification.setOnClickListener { navTo(R.id.main_to_notification_fragment) }
+        binding.btnWorkManager.setOnClickListener { navTo(R.id.main_to_work_manager_fragment) }
     }
 }

@@ -18,6 +18,10 @@
             android:id="@+id/main_to_notification_fragment"
             app:destination="@id/notification_fragment"
             app:popUpTo="@id/main_fragment" />
+        <action
+            android:id="@+id/main_to_work_manager_fragment"
+            app:destination="@id/work_manager_fragment"
+            app:popUpTo="@id/main_fragment" />
     </fragment>
     <fragment
         android:id="@+id/toast_snake_fragment"
@@ -29,6 +33,9 @@
         android:name="com.nascimentofe.googledevelopercertification.presentation.ui.notifications.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
-
-
+    <fragment
+        android:id="@+id/work_manager_fragment"
+        android:name="com.nascimentofe.googledevelopercertification.presentation.ui.work_manager.WorkManagerFragment"
+        android:label="fragment_work_manager"
+        tools:layout="@layout/fragment_work_manager" />
 </navigation>

@@ -64,20 +64,7 @@ class NotificationFragment : Fragment() {
         }
 
         binding.btnUpdate.setOnClickListener {
-            val androidImage = BitmapFactory.decodeResource(resources, R.drawable.ic_message)
-
-            val notification = getNotificationBuilder()
-                .setStyle(
-                    NotificationCompat.BigPictureStyle()
-                        .bigPicture(androidImage)
-                        .setBigContentTitle("Notificacao atualizada!")
-                )
-
-            with(notificationManager) {
-                notify(NOTIFICATION_ID, notification.build())
-            }
-
-            setupStateButton(enableNotify = false, enableUpdate = false, enableCancel = true)
+            updateNotification()
         }
 
         binding.btnCancel.setOnClickListener {
@@ -86,6 +73,23 @@ class NotificationFragment : Fragment() {
             }
             setupStateButton(enableNotify = true, enableUpdate = false, enableCancel = false)
         }
+    }
+
+    private fun updateNotification() {
+        val androidImage = BitmapFactory.decodeResource(resources, R.drawable.ic_message)
+
+        val notification = getNotificationBuilder()
+            .setStyle(
+                NotificationCompat.BigPictureStyle()
+                    .bigPicture(androidImage)
+                    .setBigContentTitle("Notificacao atualizada!")
+            )
+
+        with(notificationManager) {
+            notify(NOTIFICATION_ID, notification.build())
+        }
+
+        setupStateButton(enableNotify = false, enableUpdate = false, enableCancel = true)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -178,13 +182,29 @@ class NotificationFragment : Fragment() {
     }
 
     override fun onDestroy() {
+        // EVITANDO VAZAMENTO DE MEMORIA (MEMORY LEAK) AO FECHAR O APP E PERMANECER COM O RECEIVER ABERTO
         requireActivity().unregisterReceiver(notificationReceiver)
         super.onDestroy()
     }
 
-    class NotificationReceiver : BroadcastReceiver() {
-        override fun onReceive(p0: Context?, p1: Intent?) {
-
+    inner class NotificationReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            when (intent.action) {
+                ACTION_UPDATE -> updateNotification()
+                ACTION_CANCEL -> {
+                    notificationManager.cancel(NOTIFICATION_ID)
+                    setupStateButton(
+                        enableNotify = true,
+                        enableUpdate = false,
+                        enableCancel = false
+                    )
+                }
+                ACTION_DELETE_ALL -> setupStateButton(
+                    enableNotify = true,
+                    enableUpdate = false,
+                    enableCancel = false
+                )
+            }
         }
 
     }
